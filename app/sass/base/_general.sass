@@ -50,6 +50,7 @@ a:hover, a:active, a:focus
 a
   color: $acc-dark
   text-decoration: none
+  +mt(.3s)
 
 a, li, button
   outline: none!important
@@ -63,4 +64,19 @@ ul
   display: none!important
 // ======= END TEMPLATE STYLES =======
 
+.btn
+  display: inline-block
+  line-height: 1
+  +mt(.3s)
+  text-align: center
+  border-radius: 15px
+  font-weight: 700
+  padding: 12px
+
+.btn-transparent
+  border: 1px solid $text
+  color: #fff
+  &:hover, &:active, &:focus
+    background-color: $text
+    color: $acc-dark
 
