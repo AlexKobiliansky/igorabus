@@ -1,0 +1,33 @@
+.s-advantages
+  padding-top: 40px
+
+.adv-item
+  padding-right: 60px
+  margin-bottom: 45px
+  width: 50%
+
+.advs-wrap
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.advchecks-wrap
+  display: flex
+  justify-content: space-between
+
+
+.advcheck-item
+  position: relative
+  padding-left: 60px
+  font-size: 20px
+  width: calc(33.33333% - 30px)
+  margin-bottom: 30px
+  &:before
+    content: ''
+    position: absolute
+    width: 42px
+    height: 42px
+    background-image: url('../img/icons/advcheck-icon.svg')
+    +bg-cover
+    left: 0
+    top: 0
