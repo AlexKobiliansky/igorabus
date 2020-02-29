@@ -34,6 +34,15 @@ $(document).ready(function(){
     });
 
 
+    $('.intro-slider').slick({
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        fade: true,
+        cssEase: 'linear',
+    });
+
+
     //E-mail Ajax Send
     $("form").submit(function() { //Change
         var th = $(this);

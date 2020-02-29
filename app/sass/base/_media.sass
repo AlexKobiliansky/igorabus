@@ -13,6 +13,18 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+
+  .intro-sequence
+    .section-title
+      text-align: left
+
+  .intro-item
+    width: calc(50% - 40px)
+
+  .section-title
+    font-size: 28px
+    margin-bottom: 35px
+
   .topline
     padding: 30px 0
     flex-wrap: wrap
@@ -26,9 +38,47 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
+  .section-title
+    font-size: 22px
+
+  .intro-sequence
+    top: -30px
+
+  .seq-wrap
+    flex-wrap: wrap
+
+  .seq-item
+    width: 50%
+
+  .seq-notice
+    font-size: 22px
 
 // ≥480px
 +media-breakpoint-down(xs)
+
+  .s-intro
+    padding-bottom: 30px
+
+  .intro-wrap
+    display: none
+
+  .intro-item
+    img
+      margin-left: auto
+      margin-right: auto
+    &:first-child
+      img
+        margin-top: 70px
+    .section-title
+      margin-bottom: 20px
+
+  .intro-sequence
+    top: 0
+    margin-top: 20px
+    .section-title
+      text-align: center
+
+
   .head-links
     flex-wrap: wrap
     justify-content: center
@@ -38,6 +88,14 @@
       margin-bottom: 20px
 
 @media (max-width: 390px)
+
+  .seq-item
+    width: 100%
+    padding-right: 0
+    padding-left: 30px
+    &:before
+      font-size: 30px
+
   .head-logo
     width: 100%
     margin-bottom: 20px

@@ -3,3 +3,56 @@
   +bg-cover
   .topline
     background-image: none
+
+.intro-wrap
+  display: flex
+  justify-content: space-between
+  .section-title
+    margin-bottom: 35px
+
+.intro-item
+  max-width: 50%
+  &-link
+    img
+      filter: grayscale(1)
+      +mt(.3s)
+    &:hover
+      img
+        filter: none
+
+.intro-sequence
+  position: relative
+  top: -50px
+  .section-title
+    text-align: center
+
+.seq-wrap
+  display: flex
+  justify-content: space-between
+  counter-reset: seq-item
+
+.seq-item
+  width: 25%
+  padding-left: 38px
+  padding-right: 20px
+  position: relative
+  counter-increment: seq-item
+  margin-bottom: 30px
+  &:before
+    content: counter(seq-item)
+    position: absolute
+    font-size: 40px
+    font-weight: 900
+    color: #fff
+    left: 0
+    top: 0
+    line-height: 1
+
+.seq-notice
+  font-size: 30px
+  text-align: center
+
+.intro-slider
+  .slick-arrow
+    display: none!important
+
