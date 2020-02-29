@@ -5,6 +5,11 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+
+  .botlink-item
+    padding-left: 0
+    width: calc(50% - 20px)
+
   .head-phone
     font-size: 18px
     margin-left: 22px
@@ -13,6 +18,19 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+
+  .s-links
+    top: 0
+    padding-top: 20px
+
+  .link-notice
+    padding-top: 30px
+    font-size: 12px
+
+  .botlink-item
+    width: calc(50% - 10px)
+    &-title
+      font-size: 14px
 
   .intro-sequence
     .section-title
@@ -38,6 +56,33 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
+
+  .botlink-item
+    justify-content: space-between
+    align-items: flex-start
+    &-icon
+      width: 50px
+      height: auto
+      margin-right: 0
+    &-content
+      width: calc(100% - 60px)
+    .btn
+      width: 70px
+      .svg
+        width: 35px
+
+
+  .s-links
+    top: -50px
+    padding-top: 0
+
+  .s-intro
+    padding-bottom: 30px
+
+  .link-notice
+    padding-top: 0
+    margin-bottom: 70px
+
   .section-title
     font-size: 22px
 
@@ -56,8 +101,19 @@
 // ≥480px
 +media-breakpoint-down(xs)
 
+  .links-bottom
+    flex-wrap: wrap
+
+  .botlink-item
+    &-icon
+      width: 80px
+    &-content
+      width: calc(100% - 95px)
+    width: 100%
+    margin-bottom: 30px
+
   .s-intro
-    padding-bottom: 30px
+    padding-bottom: 60px
 
   .intro-wrap
     display: none
@@ -88,6 +144,15 @@
       margin-bottom: 20px
 
 @media (max-width: 390px)
+
+  .link-notice
+    margin-bottom: 40px
+
+  .botlink-item
+    &-icon
+      width: 60px
+    &-content
+      width: calc(100% - 70px)
 
   .seq-item
     width: 100%

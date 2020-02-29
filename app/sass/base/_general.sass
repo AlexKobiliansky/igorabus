@@ -79,6 +79,11 @@ ul
   &:hover, &:active, &:focus
     background-color: $text
     color: $acc-dark
+    
+.btn-grad
+  background-image: linear-gradient(to right, $acc-dark 0%, $acc-light 100%)
+  &:hover
+    background-image: linear-gradient(to right, $acc-light 0%, $acc-dark 100%)
 
 .section-title
   font-size: 35px
