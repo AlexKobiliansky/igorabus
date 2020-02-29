@@ -27,6 +27,21 @@
 </head>
 
 <body>
+<!-- preloader -->
+<div class="preloader">
+	<div class="sk-cube-grid">
+		<div class="sk-cube sk-cube-1"></div>
+		<div class="sk-cube sk-cube-2"></div>
+		<div class="sk-cube sk-cube-3"></div>
+		<div class="sk-cube sk-cube-4"></div>
+		<div class="sk-cube sk-cube-5"></div>
+		<div class="sk-cube sk-cube-6"></div>
+		<div class="sk-cube sk-cube-7"></div>
+		<div class="sk-cube sk-cube-8"></div>
+		<div class="sk-cube sk-cube-9"></div>
+	</div>
+</div>
+<!-- preloader -->
 
 <!-- ======= SECTION INTRO START ======= -->
 <section class="s-intro">
@@ -60,8 +75,8 @@
 
 				<div class="head-links">
 					<span>
-						<a href="#0" class="btn btn-transparent">Задать вопрос</a>
-						<a href="#0" class="btn btn-transparent">Подписаться</a>
+						<a href="#popup-order-complete" class="btn btn-transparent btn-popup">Задать вопрос</a>
+						<a href="#popup-subscribe" class="btn btn-transparent btn-popup">Подписаться</a>
 					</span>
 
 					<a href="tel:+78122091817" class="head-phone">+7 (812) <span>209-1817</span></a>
@@ -384,6 +399,46 @@
 	</div>
 </footer>
 <!-- ======= FOOTER END ======= -->
+
+<div class="hidden">
+	<form class="contact-form popup-form" id="popup-subscribe">
+
+		<!-- Hidden Required Fields -->
+		<input type="hidden" name="project_name" value="Igorabus.ru">
+		<input type="hidden" name="admin_email" value="alexey.kobilianskiy@gmail.com">
+		<input type="hidden" name="form_subject" value="Заявка с сайта Igorabus.ru">
+		<!-- END Hidden Required Fields -->
+
+		<h3>Подписка на рассылку</h3>
+
+		<div class="form-labels-wrap">
+			<label>
+				<input type="text" placeholder="Имя" name="Имя" autocomplete="off" data-validation="custom"
+					   data-validation-regexp="^[a-zA-Zа-яА-Я ]{1,50}$">
+			</label>
+			<label>
+				<input type="text" class="user-phone" name="Email" placeholder="Email"
+					   autocomplete="off" data-validation="email">
+			</label>
+			<label class="label-checkbox">
+				<input type="checkbox" required checked> <span>Согласен с <a href="#0">Правилами и условиями</a></span>
+			</label>
+
+			<button type="submit" class="btn btn-grad">Отправить</button>
+		</div>
+
+	</form>
+
+	<div class="popup-form" id="popup-order-complete">
+
+		<h3>Ваш заказ №0000 принят</h3>
+
+		<p>Данные Заказа отправлены на Вашу электронную почту</p>
+
+		<a href="#0" class="btn btn-grad">На главную</a>
+
+	</div>
+</div>
 
 <script src="js/scripts.min.js"></script>
 

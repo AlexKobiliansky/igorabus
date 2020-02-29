@@ -42,6 +42,8 @@ $(document).ready(function(){
         cssEase: 'linear',
     });
 
+
+
     /** FAQ custom */
     $('.faq-item-btn').on("click", function(){
         var parent = $(this).parents('.faq-item');
@@ -62,6 +64,22 @@ $(document).ready(function(){
         scrollToTopOnError: false
     });
 
+    $('input[type="checkbox"]').styler();
+
+    $(function() {
+        $(".btn-popup").magnificPopup({
+            type: "inline",
+            fixedContentPos: !1,
+            fixedBgPos: !0,
+            overflowY: "auto",
+            closeBtnInside: !0,
+            preloader: !1,
+            midClick: !0,
+            removalDelay: 300,
+            mainClass: "my-mfp-zoom-in"
+        })
+    });
+
     //E-mail Ajax Send
     $(".contact-form").submit(function() { //Change
         var th = $(this);
@@ -77,6 +95,6 @@ $(document).ready(function(){
     });
     /** FORMS END */
 
-
+    $('.preloader').fadeOut();
 
 });

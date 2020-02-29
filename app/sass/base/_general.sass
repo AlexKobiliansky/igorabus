@@ -124,6 +124,179 @@ form
     resize: none
   .help-block
     display: none
+  .label-checkbox
+    display: flex
+    align-items: center
+    font-size: 12px
+    justify-content: space-between
+    &>span
+      width: calc(100% - 42px)
+    a
+      color: $text
+      text-decoration: underline
+      &:hover
+        color: $text
+        text-decoration: none
+
+
+
+//preloader
+.sk-cube-grid
+  width: 4em
+  height: 4em
+  margin: auto
+/*
+ * Spinner positions
+ * 1 2 3
+ * 4 5 6
+ * 7 8 9
+ */
+
+.sk-cube-grid .sk-cube
+  width: 33%
+  height: 33%
+  background-color: $acc-dark
+  float: left
+  animation: sk-cube-grid-scale-delay 1.3s infinite ease-in-out
+
+.sk-cube-grid .sk-cube-1
+  animation-delay: 0.2s
+
+.sk-cube-grid .sk-cube-2
+  animation-delay: 0.3s
+
+.sk-cube-grid .sk-cube-3
+  animation-delay: 0.4s
+
+.sk-cube-grid .sk-cube-4
+  animation-delay: 0.1s
+
+.sk-cube-grid .sk-cube-5
+  animation-delay: 0.2s
+
+.sk-cube-grid .sk-cube-6
+  animation-delay: 0.3s
+
+.sk-cube-grid .sk-cube-7
+  animation-delay: 0s
+
+.sk-cube-grid .sk-cube-8
+  animation-delay: 0.1s
+
+.sk-cube-grid .sk-cube-9
+  animation-delay: 0.2s
+
+@keyframes sk-cube-grid-scale-delay
+  0%, 70%, 100%
+    transform: scale3D(1, 1, 1)
+  35%
+    transform: scale3D(0, 0, 1)
+
+
+.preloader
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 999
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $acc-light
+//end PRELOADER
+
+.popup-form
+  position: relative
+  display: block
+  max-width: 380px
+  background-color: #fff
+  border-radius: 30px
+  margin-left: auto
+  margin-right: auto
+  padding: 40px 30px
+  h3
+    font-size: 22px
+    font-weight: 900
+    text-align: center
+    margin-bottom: 30px
+  .form-labels-wrap
+    padding: 0 50px
+  label
+    margin-bottom: 20px
+  input
+    padding: 12px 24px
+    border-radius: 40px
+  .btn
+    width: 100%
+
+#popup-order-complete
+  .btn
+    display: block
+    margin-top: 40px
+    width: 220px
+    margin-left: auto
+    margin-right: auto
+
+.jq-checkbox
+  width: 30px
+  height: 30px
+  border-radius: 7px
+  background: #e8e8e8
+  border: none!important
+  box-shadow: none!important
+
+.jq-checkbox.checked .jq-checkbox__div
+  transform: none
+  border: none
+  width: 18px
+  height: 18px
+  background-image: url('../img/icons/check-arrow.svg')
+  +bg-cover
+  margin: 5px auto 0
+
+//MY_MFP_ZOOM_IN
+.my-mfp-zoom-in
+  .zoom-anim-dialog, .popup-form
+    opacity: 0
+    transition: all 0.5s ease-in-out
+    transform: scale(0.7)
+  &.mfp-ready .zoom-anim-dialog, &.mfp-ready .popup-form
+    opacity: 1
+    transform: scale(1)
+  &.mfp-removing .zoom-anim-dialog, &.mfp-removing .popup-form
+    transform: scale(0.7)
+    opacity: 0
+  &.mfp-bg
+    opacity: 0
+    transition: opacity 0.5s ease-out
+  &.mfp-ready.mfp-bg
+    opacity: .9
+  &.mfp-removing.mfp-bg
+    opacity: 0
+
+button.mfp-close
+  background: linear-gradient(to right, $acc-dark 0%, $acc-light 100%)
+  opacity: 1
+  border-radius: 50%
+  width: 33px
+  height: 33px
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 24px
+  font-weight: 900
+  line-height: 33px
+  padding-left: 2px
+  top: -7px
+  right: -7px
+  &:hover, &:active, &:focus
+    top: -7px
+    right: -7px
+    background: linear-gradient(to right, $acc-light 0%, $acc-dark 100%)
+
 
 
 
