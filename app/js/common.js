@@ -42,6 +42,18 @@ $(document).ready(function(){
         cssEase: 'linear',
     });
 
+    /** FAQ custom */
+    $('.faq-item-btn').on("click", function(){
+        var parent = $(this).parents('.faq-item');
+        parent.toggleClass('active').find('.faq-item-ans').slideToggle();
+
+        parent.siblings('.faq-item').each(function(){
+            $(this).removeClass('active');
+            $(this).find('.faq-item-ans').slideUp();
+        });
+    });
+    /** end FAQ custom */
+
 
     //E-mail Ajax Send
     $("form").submit(function() { //Change

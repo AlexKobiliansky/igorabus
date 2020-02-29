@@ -1,0 +1,44 @@
+.s-faq
+  padding-top: 30px
+
+.faqs-wrap
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+.faqs-part
+  width: calc(50% - 50px)
+
+
+.faq-item
+  width: 100%
+  margin-bottom: 55px
+  &-ask
+    font-size: 20px
+    margin-bottom: 22px
+  &-btn
+    width: 142px
+    font-size: 16px
+  &-ans
+    padding-top: 70px
+    position: relative
+    display: none
+    &:before
+      content: ''
+      position: absolute
+      width: 12px
+      height: 23px
+      background-image: url('../img/icons/mid-arrow.svg')
+      +bg-cover
+      top: 22px
+      left: 66px
+      opacity: 0
+
+  &.active
+    .faq-item-btn
+      filter: grayscale(1)
+      background-image: none
+      background-color: $acc-light
+    .faq-item-ans
+      &:before
+        opacity: 1
