@@ -55,8 +55,15 @@ $(document).ready(function(){
     /** end FAQ custom */
 
 
+
+    /** FORMS START */
+    $.validate({
+        form : '.contact-form',
+        scrollToTopOnError: false
+    });
+
     //E-mail Ajax Send
-    $("form").submit(function() { //Change
+    $(".contact-form").submit(function() { //Change
         var th = $(this);
 
         $.ajax({
@@ -68,4 +75,8 @@ $(document).ready(function(){
         });
         return false;
     });
+    /** FORMS END */
+
+
+
 });

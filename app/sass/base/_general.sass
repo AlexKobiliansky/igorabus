@@ -72,6 +72,8 @@ ul
   border-radius: 30px
   font-weight: 700
   padding: 12px
+  box-shadow: none
+  cursor: pointer
 
 .btn-transparent
   border: 1px solid $text
@@ -79,10 +81,13 @@ ul
   &:hover, &:active, &:focus
     background-color: $text
     color: $acc-dark
-    
+
+
+
 .btn-grad
   background-image: linear-gradient(to right, $acc-dark 0%, $acc-light 100%)
   color: $text
+  border: none
   &:hover
     background-image: linear-gradient(to right, $acc-light 0%, $acc-dark 100%)
 
@@ -95,4 +100,32 @@ h3
   font-weight: normal
   font-size: 20px
   margin-bottom: 16px
+
+
+form
+  label
+    display: block
+    margin-bottom: 30px
+  input, textarea
+    width: 100%
+    background-color: #e8e8e8
+    color: $text
+    border: 1px solid #e8e8e8
+    line-height: 1
+    &::placeholder
+      color: $text
+    &.error
+      border-color: red!important
+      color: red!important
+      &::placeholder
+        color: red!important
+  textarea
+    resize: none
+  .help-block
+    display: none
+
+
+
+
+
 
