@@ -42,7 +42,9 @@ $(document).ready(function(){
         cssEase: 'linear',
     });
 
+    $('.policy-content').tabs();
 
+    $('.preloader').fadeOut();
 
     /** FAQ custom */
     $('.faq-item-btn').on("click", function(){
@@ -55,8 +57,6 @@ $(document).ready(function(){
         });
     });
     /** end FAQ custom */
-
-
 
     /** FORMS START */
     $.validate({
@@ -95,6 +95,6 @@ $(document).ready(function(){
     });
     /** FORMS END */
 
-    $('.preloader').fadeOut();
+
 
 });

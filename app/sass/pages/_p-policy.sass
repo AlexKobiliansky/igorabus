@@ -1,0 +1,48 @@
+.policy-controls
+  margin-bottom: 50px
+  display: flex
+  li
+    display: inline-block
+    &:first-child
+      a
+        margin-left: 0
+    &.ui-tabs-active
+      a
+        background: #fff
+        border: 1px solid $text
+        &:before, &:after
+          display: block
+  a
+    position: relative
+    display: inline-flex
+    text-align: center
+    padding: 9px
+    width: 270px
+    justify-content: center
+    align-items: center
+    border-radius: 40px
+    +bg-grad
+    font-size: 18px
+    font-weight: 700
+    color: $text
+    line-height: 1
+    margin-left: 30px
+    height: 53px
+    border: 1px solid transparent
+    +mt(0s)
+    &:before
+      content: ''
+      position: absolute
+      border: 16px solid transparent
+      border-top: 16px solid $text
+      bottom: -32px
+      left: calc(50% - 16px)
+      display: none
+    &:after
+      content: ''
+      position: absolute
+      border: 16px solid transparent
+      border-top: 16px solid #fff
+      bottom: -31px
+      left: calc(50% - 16px)
+      display: none

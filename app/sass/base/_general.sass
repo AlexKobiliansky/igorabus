@@ -102,6 +102,10 @@ h3
   font-size: 20px
   margin-bottom: 16px
 
+.page-content
+  padding-bottom: 70px
+  min-height: calc(100vh - 482px)
+
 
 form
   label
@@ -297,6 +301,35 @@ button.mfp-close
     right: -7px
     background: linear-gradient(to right, $acc-light 0%, $acc-dark 100%)
 
+.breadcrumbs
+  padding: 30px 0 35px
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.btn-back
+  width: 190px
+
+.breadcrumbs-wrap
+  width: calc(100% - 210px)
+  a
+    font-size: 12px
+    display: inline-block
+    position: relative
+    color: $text
+    &:hover
+      color: $acc-dark
+    &:after
+      content: '>'
+      display: inline-block
+      margin-left: 6px
+      color: $text
+    &:last-child
+      color: #ff5400
+      pointer-events: none
+      &:after
+        display: none
 
 
 

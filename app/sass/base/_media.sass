@@ -116,6 +116,18 @@
 // ≥768px
 +media-breakpoint-down(sm)
 
+  .policy-controls
+    a
+      font-size: 14px
+      width: 200px
+      margin-left: 10px
+
+  .btn-back
+    display: none
+
+  .breadcrumbs-wrap
+    width: 100%
+
   .s-ask
     h2
       font-size: 44px
@@ -186,6 +198,14 @@
 // ≥480px
 +media-breakpoint-down(xs)
 
+  .page-content
+    padding-bottom: 40px
+
+  .policy-controls
+    a
+      width: 170px
+      font-size: 12px
+
   .foot-links
     .btn
       font-size: 12px
@@ -252,6 +272,21 @@
       margin-bottom: 20px
 
 @media (max-width: 390px)
+
+  .policy-controls
+    flex-wrap: wrap
+    margin-bottom: 25px
+    li
+      width: 100%
+      &.ui-tabs-active
+        a
+          &:before, &:after
+            display: none
+    a
+      width: 100%
+      margin-left: 0
+      margin-bottom: 10px
+
 
   .popup-form
     padding: 30px 25px

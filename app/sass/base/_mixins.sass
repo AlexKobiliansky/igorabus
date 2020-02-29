@@ -28,3 +28,8 @@
   bottom: 0
   right: 0
 
+@mixin bg-grad()
+  background: linear-gradient(to right, $acc-dark 0%, $acc-light 100%)
+  &:hover
+    background: linear-gradient(to right, $acc-light 0%, $acc-dark 100%)
+
