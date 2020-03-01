@@ -44,6 +44,10 @@ $(document).ready(function(){
 
     $('.policy-content').tabs();
 
+    $('.service-img').parallax({
+        bleed: '50',
+    });
+
     $('.preloader').fadeOut();
 
     /** FAQ custom */
@@ -64,7 +68,42 @@ $(document).ready(function(){
         scrollToTopOnError: false
     });
 
-    $('input[type="checkbox"]').styler();
+    var uPhone = $('.user-phone');
+    uPhone.mask("+7 (999) 999-99-99",{autoclear: false});
+
+    uPhone.on('click', function (ele) {
+        var needelem = ele.target || event.srcElement;
+        needelem.setSelectionRange(4,4);
+        needelem.focus();
+    });
+
+    $('input[type="checkbox"], select').styler();
+
+    var year = (new Date).getFullYear();
+
+    //date-picker custom
+    $( ".calendar" ).datepicker({
+        dayNames: [ "Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота" ],
+        dayNamesMin: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пн", "Сб" ],
+        monthNames: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
+        monthNamesShort: [ "Янв", "Феф", "Мар", "Апр", "Май", "Инь", "Иль", "Авг", "Сен", "Окт", "Нбр", "Дек" ],
+        dateFormat: "dd.mm.yy",
+        minDate: new Date(year, 0, 1),
+        maxDate: new Date(year, 11, 31),
+        firstDay: 1,
+        beforeShowDay: function(date){
+            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+            return [ array.indexOf(string) == -1 ]
+        }
+    });
+
+    $('#order-date').val($('.calendar').val());
+
+    $('.calendar').on("change", function () {
+        var chosenDate = $(this).val();
+
+        $('#order-date').val(chosenDate);
+    });
 
     $(function() {
         $(".btn-popup").magnificPopup({
@@ -81,7 +120,31 @@ $(document).ready(function(){
     });
 
     //E-mail Ajax Send
-    $(".contact-form").submit(function() { //Change
+    $(".send-form").submit(function() { //Change
+        var th = $(this);
+
+        $.ajax({
+            type: "POST",
+            url: "mail.php", //Change
+            data: th.serialize()
+        }).done(function() {
+
+        });
+        return false;
+    });
+
+    $('.num input').on('keyup', function(){
+        if ($(this).val()) {
+            $('.num input').removeClass('error');
+        }
+    });
+
+    $(".service-form").submit(function() {
+       if(!$('#adults').val() && !$('#students').val() && !$('#children').val()) {
+           $('.num input').addClass('error');
+       }
+
+
         var th = $(this);
 
         $.ajax({

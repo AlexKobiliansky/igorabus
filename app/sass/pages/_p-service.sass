@@ -1,0 +1,96 @@
+.service-content
+  padding-bottom: 40px
+  .section-title
+    margin-bottom: 100px
+
+.service-img
+  height: 350px
+  overflow: hidden
+  margin-bottom: 110px
+
+.service-form
+  .num
+    width: 160px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    input
+      width: 78px
+      text-align: center
+    span
+      width: calc(100% - 88px)
+  input
+    border-radius: 5px
+    padding: 12px 10px 12px 14px
+  h3
+    margin-bottom: 30px
+  .btn
+    font-size: 18px
+    width: 100%
+    padding: 18px
+  &-img
+    margin-bottom: 65px
+  .smaller
+    font-size: 19px
+
+.calendar-wrap
+  padding-left: 65px
+  padding-right: 65px
+  h3
+    margin-bottom: 45px
+
+//calendar
+.ui-datepicker-year
+  display: none
+
+.ui-datepicker-month
+  font-size: 20px
+  text-transform: uppercase
+  text-align: center
+  font-weight: 700
+
+.ui-datepicker-prev, .ui-datepicker-next
+  width: 40px!important
+  height: 40px!important
+  border-radius: 50%
+  +bg-cover
+  cursor: pointer
+
+.ui-datepicker-prev
+  background-image: url('../img/icons/datepicker-prev-bg.png')
+  top: -6px!important
+  left: 2px!important
+
+.ui-datepicker-next
+  background-image: url('../img/icons/datepicker-next-bg.png')
+  top: -6px!important
+  right: 2px!important
+
+.ui-datepicker-title
+  margin-bottom: 20px!important
+
+.ui-datepicker
+  width: 100%
+  th
+    font-size: 16px
+    text-align: center
+    font-weight: 400
+  td
+    padding: 5px
+    a, span
+      font-size: 20px
+      font-weight: 700
+      text-align: center
+      background-color: #fff
+      border-radius: 5px
+      box-shadow: 0 0 35px rgba(#000, .2)
+      color: $text
+      border: 3px solid #fff
+      &.ui-darepicker-current-day, &.ui-state-active
+        border-color: #ff3600
+    &.ui-state-disabled
+      span
+        background-color: darken(#e8e8e8, 10%)
+        border-color: darken(#e8e8e8, 10%)
+
+

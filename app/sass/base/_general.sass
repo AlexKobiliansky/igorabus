@@ -142,6 +142,54 @@ form
         color: $text
         text-decoration: none
 
+.jq-selectbox
+  font-size: 14px
+  width: 100%
+  &__select
+    background: #e8e8e8
+    border: 1px solid #e8e8e8
+    box-shadow: none
+    text-shadow: none
+    height: auto
+    line-height: 1
+    padding: 12px 52px 12px 14px
+    &:hover
+      box-shadow: none
+      background: #e8e8e8
+  &.focused
+    .jq-selectbox__select
+      border-color: #e8e8e8
+  &.dropdown
+    .jq-selectbox__trigger-arrow
+      transform: rotate(180deg)
+  li
+    &.selected, &:hover
+      color: #fff
+      background-color: $acc-dark
+    &.disabled
+      &:hover
+        background-color: #e8e8e8
+        color: #fff
+  &.has-error
+    .jq-selectbox__select
+      border-color: red!important
+      color: red!important
+
+
+  &__select-text
+    font-family: $default-font
+
+.jq-selectbox__trigger-arrow
+  border: none
+  width: 17px
+  height: 9px
+  right: 15px
+  top: calc(50% - 4.5px)
+  background-image: url('../img/icons/select-arrow.svg')
+  +bg-cover
+
+.jq-selectbox__trigger
+  border-left: none
 
 
 //preloader

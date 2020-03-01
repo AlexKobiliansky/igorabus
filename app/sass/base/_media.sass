@@ -6,6 +6,10 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 
+  .service-form
+    .smaller
+      margin-top: 30px
+
   .payment-order
     font-size: 60px
 
@@ -33,6 +37,9 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+
+  .calendar-wrap
+    padding: 0
 
   .payment-order
     padding-top: 0
@@ -131,6 +138,9 @@
 // ≥768px
 +media-breakpoint-down(sm)
 
+  .calendar-wrap
+    margin-top: 30px
+
   .policy-controls
     a
       font-size: 14px
@@ -213,6 +223,14 @@
 // ≥480px
 +media-breakpoint-down(xs)
 
+  .service-img
+    height: 280px
+    margin-bottom: 80px
+
+  .calendar-wrap
+    margin-left: auto
+    margin-right: auto
+
   .payment-order
     font-size: 48px
 
@@ -290,6 +308,13 @@
       margin-bottom: 20px
 
 @media (max-width: 390px)
+
+  .ui-datepicker td a, .ui-datepicker td span
+    font-size: 16px
+
+  .ui-datepicker
+    td
+      padding: 3px
 
   .payment-order
     font-size: 38px
