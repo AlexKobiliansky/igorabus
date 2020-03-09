@@ -116,6 +116,12 @@
 				<!-- END Hidden Required Fields -->
 
 				<input type="hidden" name="Число" value="" id="order-date">
+				<input type="hidden" name="departure-place" value="" id="departure-place">
+				<input type="hidden" name="departure-time" value="" id="departure-time">
+				<input type="hidden" name="departure-price" value="" id="departure-price">
+				<input type="hidden" name="arrival-place" value="" id="arrival-place">
+				<input type="hidden" name="arrival-time" value="" id="arrival-time">
+				<input type="hidden" name="arrival-price" value="" id="arrival-price">
 
 				<div class="row">
 					<div class="col-md-6 col-xl-4">
@@ -125,7 +131,7 @@
 						<h3>Выберите место и время отправления и возвращения</h3>
 
 						<label>
-							<select name="Время и место отправления" data-validation="required">
+							<select name="Время и место отправления" data-validation="required" id="departure-select">
 								<option selected disabled="disabled" hidden value="не указано">Место отправления / Время отправления</option>
 								<option value="Место отправления 1 / Время отправления 1"  data-place="place-1" data-time="time-1">Место отправления 1 / Время отправления 1</option>
 								<option value="Место отправления 2 / Время отправления 2" data-place="place-2" data-time="time-2">Место отправления 2 / Время отправления 2</option>
@@ -135,7 +141,7 @@
 						</label>
 
 						<label>
-							<select name="Время и место возвращения" data-validation="required">
+							<select name="Время и место возвращения" data-validation="required" id="arrival-select">
 								<option selected disabled="disabled" hidden value="не указано">Место возвращения / Время возвращения</option>
 								<option value="Место возвращения 1 / Время возвращения 1"  data-place="place-1" data-time="time-1">Место возвращения 1 / Время возвращения 1</option>
 								<option value="Место возвращения 2 / Время возвращения 2" data-place="place-2" data-time="time-2">Место возвращения 2 / Время возвращения 2</option>
@@ -151,12 +157,12 @@
 						</label>
 
 						<label class="num">
-							<span>Студенты</span>
+							<span>Дети до 8-ми лет, студенты и пенсионеры <span>(20% скидка от тарифа)</span></span>
 							<input type="text" name="Студенты" placeholder="Кол-во" autocomplete="off" data-validation="number" id="students" data-validation-optional="true">
 						</label>
 
 						<label class="num">
-							<span>Дети</span>
+							<span>Багаж <span>(50% скидка от тарифа)</span></span>
 							<input type="text" name="Дети" placeholder="Кол-во" autocomplete="off" data-validation="number" id="children" data-validation-optional="true">
 						</label>
 
@@ -189,8 +195,7 @@
 
 						<label>
 							<input type="text" class="user-phone" name="Телефон" placeholder="Телефон"
-								   autocomplete="off" data-validation="custom"
-								   data-validation-regexp="\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
+								   autocomplete="off" data-validation="required">
 						</label>
 
 						<button class="btn btn-grad">Оформить заказ</button>

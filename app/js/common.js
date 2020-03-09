@@ -50,6 +50,11 @@ $(document).ready(function(){
 
     $('.preloader').fadeOut();
 
+    $('.btn-back').click(function(e){
+        e.preventDefault();
+        window.history.back();
+    });
+
     /** FAQ custom */
     $('.faq-item-btn').on("click", function(){
         var parent = $(this).parents('.faq-item');
@@ -68,14 +73,14 @@ $(document).ready(function(){
         scrollToTopOnError: false
     });
 
-    var uPhone = $('.user-phone');
-    uPhone.mask("+7 (999) 999-99-99",{autoclear: false});
+    // var uPhone = $('.user-phone');
+    // uPhone.mask("+7 (999) 999-99-99",{autoclear: false});
 
-    uPhone.on('click', function (ele) {
-        var needelem = ele.target || event.srcElement;
-        needelem.setSelectionRange(4,4);
-        needelem.focus();
-    });
+    // uPhone.on('click', function (ele) {
+    //     var needelem = ele.target || event.srcElement;
+    //     needelem.setSelectionRange(4,4);
+    //     needelem.focus();
+    // });
 
     $('input[type="checkbox"], select').styler();
 
@@ -88,8 +93,8 @@ $(document).ready(function(){
         monthNames: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
         monthNamesShort: [ "Янв", "Феф", "Мар", "Апр", "Май", "Инь", "Иль", "Авг", "Сен", "Окт", "Нбр", "Дек" ],
         dateFormat: "dd.mm.yy",
-        minDate: new Date(year, 0, 1),
-        maxDate: new Date(year, 11, 31),
+        minDate: new Date(),
+        maxDate: "+3M",
         firstDay: 1,
         beforeShowDay: function(date){
             var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
@@ -98,11 +103,30 @@ $(document).ready(function(){
     });
 
     $('#order-date').val($('.calendar').val());
-
     $('.calendar').on("change", function () {
         var chosenDate = $(this).val();
 
         $('#order-date').val(chosenDate);
+    });
+
+    $('#departure-select').on('change', function(){
+       var departurePlace = $(this).find('option:selected').data('place'),
+           departureTime = $(this).find('option:selected').data('time'),
+           departurePrice = $(this).find('option:selected').data('price');
+
+       $('#departure-place').val(departurePlace);
+       $('#departure-time').val(departureTime);
+       $('#departure-price').val(departurePrice);
+    });
+
+    $('#arrival-select').on('change', function(){
+        var arrivalPlace = $(this).find('option:selected').data('place'),
+            arrivalTime = $(this).find('option:selected').data('time'),
+            arrivalPrice = $(this).find('option:selected').data('price');
+
+        $('#arrival-place').val(arrivalPlace);
+        $('#arrival-time').val(arrivalTime);
+        $('#arrival-price').val(arrivalPrice);
     });
 
     $(function() {
@@ -142,19 +166,8 @@ $(document).ready(function(){
     $(".service-form").submit(function() {
        if(!$('#adults').val() && !$('#students').val() && !$('#children').val()) {
            $('.num input').addClass('error');
+           return false;
        }
-
-
-        var th = $(this);
-
-        $.ajax({
-            type: "POST",
-            url: "mail.php", //Change
-            data: th.serialize()
-        }).done(function() {
-
-        });
-        return false;
     });
     /** FORMS END */
 
